@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ManegementSystemDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Egitmenler">
+    <Key>
+      <PropertyRef Name="egitmen_id" />
+    </Key>
+    <Property Name="egitmen_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="egitmen_AD" Type="nvarchar" MaxLength="50" />
+    <Property Name="egitmen_Soyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="egitmen_DTarih" Type="nvarchar" MaxLength="50" />
+    <Property Name="egitmen_Cinsiyet" Type="nchar" MaxLength="10" />
+    <Property Name="egitmen_TLno" Type="nvarchar" MaxLength="11" />
+    <Property Name="egitmen_Mail" Type="nvarchar" MaxLength="50" />
+    <Property Name="egitmen_KTarih" Type="nvarchar" MaxLength="50" />
+    <Property Name="egitmen_Plan" Type="nvarchar" MaxLength="50" />
+    <Property Name="egitmen_Maas" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EgitmenMaas">
+    <Key>
+      <PropertyRef Name="egitmen_id" />
+    </Key>
+    <Property Name="egitmen_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="egitmen_Maas" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Odemeler">
+    <Key>
+      <PropertyRef Name="uye_id" />
+    </Key>
+    <Property Name="uye_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uye_Ad" Type="nvarchar" MaxLength="50" />
+    <Property Name="tutar" Type="nchar" MaxLength="50" />
+    <Property Name="plan_id" Type="int" />
+    <Property Name="plan_tutar" Type="nvarchar" MaxLength="50" />
+    <Property Name="yapılan_odeme" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Plan_Tur">
+    <Key>
+      <PropertyRef Name="Plan_id" />
+    </Key>
+    <Property Name="Plan_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Plan_Tutar" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Uyeler">
+    <Key>
+      <PropertyRef Name="uye_id" />
+    </Key>
+    <Property Name="uye_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uye_Ad" Type="nvarchar" MaxLength="50" />
+    <Property Name="uye_Soyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="uye_DTarih" Type="nvarchar" MaxLength="50" />
+    <Property Name="uye_Cinsiyet" Type="nchar" MaxLength="10" />
+    <Property Name="uye_TLno" Type="nvarchar" MaxLength="11" />
+    <Property Name="uye_Mail" Type="nvarchar" MaxLength="50" />
+    <Property Name="uye_KTarih" Type="nvarchar" MaxLength="50" />
+    <Property Name="Plan_id" Type="int" />
+    <Property Name="Plan_tutar" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UyeOlcumleri">
+    <Key>
+      <PropertyRef Name="uye_id" />
+    </Key>
+    <Property Name="uye_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uye_Ad" Type="nvarchar" MaxLength="50" />
+    <Property Name="uye_boy" Type="nchar" MaxLength="10" />
+    <Property Name="uye_kilo" Type="nchar" MaxLength="10" />
+    <Property Name="uye_vy_oranı" Type="nvarchar" MaxLength="50" />
+    <Property Name="uye_kas_oranı" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Yoneticiler">
+    <Key>
+      <PropertyRef Name="yonetici_id" />
+    </Key>
+    <Property Name="yonetici_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LoginName" Type="nvarchar(max)" />
+    <Property Name="Password" Type="nchar" MaxLength="10" />
+    <Property Name="yonetici_AD" Type="nvarchar" MaxLength="50" />
+    <Property Name="yonetici_Soyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="yonetici_Mail" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="ManegementSystemDbModelStoreContainer">
+    <EntitySet Name="Egitmenler" EntityType="Self.Egitmenler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EgitmenMaas" EntityType="Self.EgitmenMaas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Odemeler" EntityType="Self.Odemeler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Plan_Tur" EntityType="Self.Plan_Tur" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Uyeler" EntityType="Self.Uyeler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UyeOlcumleri" EntityType="Self.UyeOlcumleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Yoneticiler" EntityType="Self.Yoneticiler" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

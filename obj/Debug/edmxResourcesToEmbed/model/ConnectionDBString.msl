@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ManegementSystemDbModelStoreContainer" CdmEntityContainer="ManegementSystemDbEntities">
+    <EntitySetMapping Name="Egitmenler">
+      <EntityTypeMapping TypeName="ManegementSystemDbModel.Egitmenler">
+        <MappingFragment StoreEntitySet="Egitmenler">
+          <ScalarProperty Name="egitmen_id" ColumnName="egitmen_id" />
+          <ScalarProperty Name="egitmen_AD" ColumnName="egitmen_AD" />
+          <ScalarProperty Name="egitmen_Soyad" ColumnName="egitmen_Soyad" />
+          <ScalarProperty Name="egitmen_DTarih" ColumnName="egitmen_DTarih" />
+          <ScalarProperty Name="egitmen_Cinsiyet" ColumnName="egitmen_Cinsiyet" />
+          <ScalarProperty Name="egitmen_TLno" ColumnName="egitmen_TLno" />
+          <ScalarProperty Name="egitmen_Mail" ColumnName="egitmen_Mail" />
+          <ScalarProperty Name="egitmen_KTarih" ColumnName="egitmen_KTarih" />
+          <ScalarProperty Name="egitmen_Plan" ColumnName="egitmen_Plan" />
+          <ScalarProperty Name="egitmen_Maas" ColumnName="egitmen_Maas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EgitmenMaas">
+      <EntityTypeMapping TypeName="ManegementSystemDbModel.EgitmenMaas">
+        <MappingFragment StoreEntitySet="EgitmenMaas">
+          <ScalarProperty Name="egitmen_id" ColumnName="egitmen_id" />
+          <ScalarProperty Name="egitmen_Maas" ColumnName="egitmen_Maas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Odemeler">
+      <EntityTypeMapping TypeName="ManegementSystemDbModel.Odemeler">
+        <MappingFragment StoreEntitySet="Odemeler">
+          <ScalarProperty Name="uye_id" ColumnName="uye_id" />
+          <ScalarProperty Name="uye_Ad" ColumnName="uye_Ad" />
+          <ScalarProperty Name="tutar" ColumnName="tutar" />
+          <ScalarProperty Name="plan_id" ColumnName="plan_id" />
+          <ScalarProperty Name="plan_tutar" ColumnName="plan_tutar" />
+          <ScalarProperty Name="yapılan_odeme" ColumnName="yapılan_odeme" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Plan_Tur">
+      <EntityTypeMapping TypeName="ManegementSystemDbModel.Plan_Tur">
+        <MappingFragment StoreEntitySet="Plan_Tur">
+          <ScalarProperty Name="Plan_id" ColumnName="Plan_id" />
+          <ScalarProperty Name="Plan_Tutar" ColumnName="Plan_Tutar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uyeler">
+      <EntityTypeMapping TypeName="ManegementSystemDbModel.Uyeler">
+        <MappingFragment StoreEntitySet="Uyeler">
+          <ScalarProperty Name="uye_id" ColumnName="uye_id" />
+          <ScalarProperty Name="uye_Ad" ColumnName="uye_Ad" />
+          <ScalarProperty Name="uye_Soyad" ColumnName="uye_Soyad" />
+          <ScalarProperty Name="uye_DTarih" ColumnName="uye_DTarih" />
+          <ScalarProperty Name="uye_Cinsiyet" ColumnName="uye_Cinsiyet" />
+          <ScalarProperty Name="uye_TLno" ColumnName="uye_TLno" />
+          <ScalarProperty Name="uye_Mail" ColumnName="uye_Mail" />
+          <ScalarProperty Name="uye_KTarih" ColumnName="uye_KTarih" />
+          <ScalarProperty Name="Plan_id" ColumnName="Plan_id" />
+          <ScalarProperty Name="Plan_tutar" ColumnName="Plan_tutar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UyeOlcumleri">
+      <EntityTypeMapping TypeName="ManegementSystemDbModel.UyeOlcumleri">
+        <MappingFragment StoreEntitySet="UyeOlcumleri">
+          <ScalarProperty Name="uye_id" ColumnName="uye_id" />
+          <ScalarProperty Name="uye_Ad" ColumnName="uye_Ad" />
+          <ScalarProperty Name="uye_boy" ColumnName="uye_boy" />
+          <ScalarProperty Name="uye_kilo" ColumnName="uye_kilo" />
+          <ScalarProperty Name="uye_vy_oranı" ColumnName="uye_vy_oranı" />
+          <ScalarProperty Name="uye_kas_oranı" ColumnName="uye_kas_oranı" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yoneticiler">
+      <EntityTypeMapping TypeName="ManegementSystemDbModel.Yoneticiler">
+        <MappingFragment StoreEntitySet="Yoneticiler">
+          <ScalarProperty Name="yonetici_id" ColumnName="yonetici_id" />
+          <ScalarProperty Name="LoginName" ColumnName="LoginName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="yonetici_AD" ColumnName="yonetici_AD" />
+          <ScalarProperty Name="yonetici_Soyad" ColumnName="yonetici_Soyad" />
+          <ScalarProperty Name="yonetici_Mail" ColumnName="yonetici_Mail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ManegementSystemDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Egitmenler">
+    <Key>
+      <PropertyRef Name="egitmen_id" />
+    </Key>
+    <Property Name="egitmen_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="egitmen_AD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="egitmen_Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="egitmen_DTarih" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="egitmen_Cinsiyet" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="egitmen_TLno" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="egitmen_Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="egitmen_KTarih" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="egitmen_Plan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="egitmen_Maas" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="EgitmenMaas">
+    <Key>
+      <PropertyRef Name="egitmen_id" />
+    </Key>
+    <Property Name="egitmen_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="egitmen_Maas" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Odemeler">
+    <Key>
+      <PropertyRef Name="uye_id" />
+    </Key>
+    <Property Name="uye_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uye_Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tutar" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="plan_id" Type="Int32" />
+    <Property Name="plan_tutar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="yapılan_odeme" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Plan_Tur">
+    <Key>
+      <PropertyRef Name="Plan_id" />
+    </Key>
+    <Property Name="Plan_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Plan_Tutar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Uyeler">
+    <Key>
+      <PropertyRef Name="uye_id" />
+    </Key>
+    <Property Name="uye_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uye_Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="uye_Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="uye_DTarih" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="uye_Cinsiyet" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="uye_TLno" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="uye_Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="uye_KTarih" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Plan_id" Type="Int32" />
+    <Property Name="Plan_tutar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="UyeOlcumleri">
+    <Key>
+      <PropertyRef Name="uye_id" />
+    </Key>
+    <Property Name="uye_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uye_Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="uye_boy" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="uye_kilo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="uye_vy_oranı" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="uye_kas_oranı" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Yoneticiler">
+    <Key>
+      <PropertyRef Name="yonetici_id" />
+    </Key>
+    <Property Name="yonetici_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LoginName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="yonetici_AD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="yonetici_Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="yonetici_Mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="ManegementSystemDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Egitmenler" EntityType="Self.Egitmenler" />
+    <EntitySet Name="EgitmenMaas" EntityType="Self.EgitmenMaas" />
+    <EntitySet Name="Odemeler" EntityType="Self.Odemeler" />
+    <EntitySet Name="Plan_Tur" EntityType="Self.Plan_Tur" />
+    <EntitySet Name="Uyeler" EntityType="Self.Uyeler" />
+    <EntitySet Name="UyeOlcumleri" EntityType="Self.UyeOlcumleri" />
+    <EntitySet Name="Yoneticiler" EntityType="Self.Yoneticiler" />
+  </EntityContainer>
+</Schema>
